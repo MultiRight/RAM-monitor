@@ -7,6 +7,7 @@
 import psutil
 import sys
 import time 
+import shutil
 
 
 # Enable ANSI escape codes on Windows (not needed on Linux/Mac)
@@ -30,6 +31,8 @@ color_reset = "\033[0m"
 # while status
 
 running = True
+
+last_size = shutil.get_terminal_size()
 
 # Core
 
@@ -70,14 +73,22 @@ while running :
     # Display consumption data
 
     try :
-        print(f"{color_light_blue}======================================RAM-monitor======================================{color_reset}")
+
+        current_size = shutil.get_terminal_size()
+        if current_size != last_size:
+            print("\033c", end="") 
+            last_size = current_size
+        
+        
+        print(f"{color_light_blue}                               RAM-monitor                               {color_reset}")
 
         print()
-
+        print("--------------------------------------------------------------------")
         print(f"{color_per}total Ram : {total_rounded} GB    {color_reset}")
         print(f"{color_per}usage Ram : {used_rounded} GB    {color_reset}")
         print(f"{color_per}available Ram : {available_rounded} GB    {color_reset}")
         print(f"{color_per}usage Ram % : {percent_ram} %  {color_reset}")
+        print("--------------------------------------------------------------------")
 
         print()
 
@@ -85,17 +96,10 @@ while running :
         print(f"Status : {color_per}{status}{color_reset}")
 
         time.sleep(0.5)
-        print("\033[H" , end="")
+        print("\033[H", end="")
         
-
-    except (KeyboardInterrupt, SystemExit):
-        try :
-            running = False
-            print()
-
-            print(f"{color_orange}Thank you for using RAM-monitor!{color_reset}")
-            print(f"{color_orange}Author : https://github.com/MultiRight{color_reset}")
-        except KeyboardInterrupt :
+        
+    except KeyboardInterrupt :
 
             running = False
             print()
