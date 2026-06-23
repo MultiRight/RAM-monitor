@@ -11,7 +11,6 @@ import sys
 import time 
 import shutil
 
-
 # Enable ANSI escape codes on Windows (not needed on Linux/Mac)
 
 if sys.platform == "win32":
