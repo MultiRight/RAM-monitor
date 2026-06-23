@@ -2,6 +2,8 @@
 
 # github : https://github.com/MultiRight
 
+# Copyright © 2026 MultiRight <https://github.com/MultiRight>
+
 # import libraries
 
 import psutil
