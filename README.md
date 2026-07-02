@@ -30,13 +30,6 @@ ram-monitor continuously tracks system memory usage and displays it in the termi
 
 ## Installation
 
-**Clone the repository:**
-
-```bash
-git clone https://github.com/MultiRight/ram-monitor
-cd ram-monitor
-```
-
 **Install dependencies:**
 
 ```bash
