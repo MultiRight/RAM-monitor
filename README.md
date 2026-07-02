@@ -75,13 +75,7 @@ To stop the monitor, press `Ctrl+C`. A goodbye message will be displayed before 
 
 This project is licensed under the **[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html)** 
 
----
 
-
-## Author
-
-**MultiRight**
-[https://github.com/MultiRight](https://github.com/MultiRight)
 
 ---
 
